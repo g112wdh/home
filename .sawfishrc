@@ -1,0 +1,359 @@
+(require 'Jump-or-exec)
+(require 'iswitch-window)
+(require 'rep.io.timers)
+(require 'rep.util.utf8)
+(require 'sawfish.wm.menus)
+;(require 'Rich-title)
+;(require 'Mousetrap)
+;(require 'mykeyboard-paste)
+;(require 'selection-menu)
+(require 'Selection-push)
+(bind-keys global-keymap 
+	   "Super-x" `(jump-or-exec "xterm"
+				    ,(lambda ()
+				       (system "xterm -T xterm -font 12 -fg grey -bg black &"))
+				    ,(lambda (wind)
+				       (display-window wind))))
+
+(bind-keys global-keymap 
+	   "Super-w" `(jump-or-exec "Wireshark"
+				    ,(lambda ()
+				       (system "wireshark &"))
+				    ,(lambda (wind)
+				       (display-window wind))))
+
+
+(bind-keys global-keymap "Super-s" 'iswitch-window)
+(bind-keys global-keymap 
+	   "H-r" `(jump-or-exec "rxvt"
+				,(lambda ()
+				   (system "rxvt -T rxvt   -fg white -bg black &"))
+				,(lambda (wind)
+				   (display-window wind))))
+(bind-keys global-keymap 
+	   "H-e" `(jump-or-exec "^emacs"
+				,(lambda ()
+				   (system "emacs -cr Brown &"))
+				,(lambda (wind)
+				   (display-window wind))))
+(bind-keys global-keymap 
+	   "H-x" `(jump-or-exec "xterm"
+				,(lambda ()
+				   (system "xterm &"))
+				,(lambda (wind)
+				   (display-window wind))))
+
+(bind-keys global-keymap 
+"H-f" `(jump-or-exec "Firefox$"
+				,(lambda ()
+				   (system "firefox &"))
+				,(lambda (wind)
+				   (display-window wind))))
+
+(bind-keys global-keymap 
+	   "H-p" `(jump-or-exec "^Xpdf"
+				,(lambda ()
+				   (system "xpdf  &"))
+				,(lambda (wind)
+				   (display-window wind))))
+
+
+(bind-keys global-keymap 
+	   "H-g" `(jump-or-exec "^gv"
+				,(lambda ()
+				   (system "gv  &"))
+				,(lambda (wind)
+				   (display-window wind))))
+
+(bind-keys global-keymap 
+	   "Super-r" `(jump-or-exec "^rxvt-unicode|urxvt|rxvt"
+				    ,(lambda ()
+				       (system "urxvt -T rxvt   -fg white -bg black  &"))
+				    ,(lambda (wind)
+				       (display-window wind))))
+(bind-keys global-keymap 
+	   "H-u" `(jump-or-exec "^rxvt-unicode|urxvt"
+				,(lambda ()
+				   (system "urxvt  &"))
+				,(lambda (wind)
+				   (display-window wind))))
+(bind-keys global-keymap 
+	   "Super-e" `(jump-or-exec "^emacs"
+				    ,(lambda ()
+				       (system "emacs -cr Brown &"))
+				    ,(lambda (wind)
+				       (display-window wind))))
+
+(bind-keys global-keymap 
+	   "Super-f" `(jump-or-exec "Aurora|firefox|Vimperator"
+				    ,(lambda ()
+				       (system "firefox &"))
+				    ,(lambda (wind)
+				       (display-window wind))))
+
+(bind-keys global-keymap 
+	   "Super-p" `(jump-or-exec "^Xpdf"
+				    ,(lambda ()
+				       (system "xpdf  &"))
+				    ,(lambda (wind)
+				       (display-window wind))))
+
+
+(bind-keys global-keymap 
+	   "Super-g" `(jump-or-exec "^gv"
+				    ,(lambda ()
+				       (system "gv  &"))
+				    ,(lambda (wind)
+				       (display-window wind))))
+;; (bind-keys global-keymap 
+;; 	   "Super-x" `(jump-or-exec "xterm"
+;; 				    ,(lambda ()
+;; 				       (system "xterm -fa courier -bg black -fg white&"))
+;; 				    ,(lambda (wind)
+;; 				       (display-window wind))))
+					;(bind-keys global-keymap 
+;; "Super-r" `(jump-or-exec "^http"
+;;       ,(lambda ()
+;;             (system "reciteword &"))
+;;           ,(lambda (wind)
+;;                        (display-window wind))))
+
+
+
+					;(bind-keys global-keymap "Super_R-F12" (move-window-to (get-window-by-name-re "^asclock") 949 1 ) )
+(bind-keys global-keymap "F12" '(maximize-window-toggle(current-event-window)))
+					;(bind-keys global-keymap "F11" '(unmaximize-window(current-event-window)))
+;(bind-keys global-keymap "F11" '(iconify-window(current-event-window)))
+;(bind-keys global-keymap "F4" '(delete-window (current-event-window)))
+(bind-keys window-keymap "Super-i" 'insert-workspace-after)
+(bind-keys window-keymap "H-i" 'insert-workspace-after)
+;(bind-keys global-keymap "F1" '(next-workspace -1))
+;(bind-keys global-keymap "F2" '(next-workspace 1))
+(bind-keys global-keymap "Super-Left" '(next-workspace -1))
+
+(require 'sawfish.wm.commands.move-resize)
+(defun wy-move-window ()
+  "hello "
+  (interactive)
+  (move-window-interactively (current-event-window)))
+
+;(bind-keys window-keymap "Button3-Click1" 'wy-move-window)
+
+
+
+
+
+
+
+
+;;;style
+;(set-window-type  (get-window-by-name-re "^emacs") 'transient)
+
+
+(setq focus-modes 'click)
+
+;(copy-to-next-workspace (current-event-window) -1  )select
+
+
+
+
+
+
+
+
+
+
+
+
+(setq startup-programs 
+      '("xet b off & "
+	"xloadimage -onroot -fullscreen /home/tian/picture/001.jpg &"
+;;	"asclock -position 1+949 &"
+	
+	))
+
+(mapc system startup-programs)
+(require 'sawfish.wm.commands.cycle)
+
+
+
+;(system "xterm -bg block -fg grey &" )
+
+
+
+;; ;;------------------
+;; (setq rttl-title-interval 1)
+;; ;(setq rttl-update-on-focus nil)
+
+
+;; (rttl-set-format
+;;  ;; window name
+;;  (rttl-name-item)
+;; ; "   "
+;;  ;; date & time. As for format string, see 'man strftime'.
+;;  (rttl-time-item "%m/%d(%a)[%I:%M:%S]")
+;;  " "
+;;  (rttl-background-shell-item "cat /proc/$PPID/cmdline" )
+;; ; (rttl-loadavg-item)
+;; ; (rttl-uptime-item)
+
+;;  )
+
+
+
+
+
+
+;; (set-frame-part-value 'title 'background
+;; 		      '("black" "white" "green" "blue") t)
+
+;(set-frame-part-value 'title 'background		      '("white" ) t)
+
+
+;(set-frame-part-value 'title		      'text 		      '("abc")  t)
+
+;(set-frame-part-value 'text  ,window-name) 
+
+;; 					;(frame-part-get 'background 'VALUE)
+;; (frame-part-state  'title 'background   )
+
+
+;; (set-frame-part-value  'title .
+;; 		       `(('background . "black")
+;;        (foreground . "white")
+;;        (text . ,window-name)
+;;        (x-justify . 30)
+;;        (y-justify . center)
+;;        (left-edge . 0)
+;;        (right-edge . 0)
+;;        (top-edge . -20)
+;;        (height . 20)
+;;        (class . title))
+
+;;        )
+
+
+;----------------------------------------------------------------------------------------------------
+(display-message "ttt")
+;(selection-menu)
+
+
+(defun popup-my-menu ()
+  (interactive)
+  (popup-menu    (selection-menu))
+  )
+(bind-keys global-keymap "Super-p" 'popup-my-menu)
+
+
+
+
+
+
+
+
+
+
+
+(utf8-substring "必须先加载" 1)
+(utf8-substring "\u8fd9\u5c31\u662f\u5f97\u5230\u53d1\u751f\u4e8b\u4ef6\u65f6\u523b\u7a97\u53e3\u7684\u6700\u597d\u529e\u6cd5" 1)
+
+
+;-----------------
+;keyboard move cursior
+(require 'rep.data.tables)
+(require 'sawfish.wm.ext.tooltips)
+(mapc
+ (lambda (x)
+   (table-set keyboard-position-hash (car x) (car (cdr x)))
+                                        ;(format nil (car x))
+   )
+ `(
+
+   ("1",  '(0 . 0))
+   ("2",  '(1 . 0))
+   ("3",  '(2 . 0))
+   ("4",  '(3 . 0))
+   ("5",  '(4 . 0))
+   ("6",  '(5 . 0))
+   ("7",  '(6 . 0))
+   ("8",  '(7 . 0))
+   ("9",  '(8 . 0))
+   ("0",  '(9 . 0))
+   
+   ("q",  '(0 . 1))
+   ("w",  '(1 . 1))
+   ("e",  '(2 . 1))
+   ("r",  '(3 . 1))
+   ("t",  '(4 . 1))
+   ("y",  '(5 . 1))
+   ("u",  '(6 . 1))
+   ("i",  '(7 . 1))
+   ("o",  '(8 . 1))
+   ("p",  '(9 . 1))
+
+   ("a",  '(0 . 2))
+   ("s",  '(1 . 2))
+   ("d",  '(2 . 2))
+   ("f",  '(3 . 2))
+   ("g",  '(4 . 2))
+   ("h",  '(5 . 2))
+   ("j",  '(6 . 2))
+   ("k",  '(7 . 2))
+   ("l",  '(8 . 2))
+   (":",  '(9 . 2))
+
+   ("z",  '(0 . 3))
+   ("x",  '(1 . 3))
+   ("c",  '(2 . 3))
+   ("v",  '(3 . 3))
+   ("b",  '(4 . 3))
+   ("n",  '(5 . 3))
+   ("m",  '(6 . 3))
+   (",",  '(7 . 3))
+   (".",  '(8 . 3))
+   )
+ )
+
+(setq keyboard-position-hash (make-table equal-hash equal))
+
+;(mouse-cursor-move (table-ref keyboard-position-hash "1"))
+
+(defun mouse-cursor-move (x)
+  (interactive)
+  (let ((max-width (screen-width))
+        (max-height (screen-height))
+        )
+    (setq width (* (car x) (quotient max-width  9)))
+    (setq height (* (cdr x) (quotient max-height 3)))
+    (if (>= width max-width)
+        (setq width (- width 2)))
+    (if (>= height max-height)
+        (setq height (- height 2)))
+    (if (<= height 0)
+        (setq height 10))
+    (if (<= width 0)
+        (setq width 10))
+    (warp-cursor width height  )))
+
+(defun position-read-event ()
+  (throw 'position-read (event-name (current-event))))
+
+(defun keyboard-move-cursor ()
+  (interactive)
+  (ungrab-keyboard)
+  (add-hook 'unbound-key-hook position-read-event)
+  (let ((override-keymap '(keymap))
+        (wind (input-focus))
+        (key (event-name (read-event "Please input the key: "))))
+
+    (mouse-cursor-move (table-ref keyboard-position-hash key))
+    (make-timer (lambda () (display-tooltip (concat "the  point is: " key ))) 1)
+    (display-window wind)
+    (remove-hook 'unbound-key-hook position-read-event)))
+
+(keyboard-move-cursor)
+
+(bind-keys global-keymap "Super-q"  'keyboard-move-cursor )
+
+;-------------------
+;end of keyboard move cursor

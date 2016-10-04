@@ -1,0 +1,6 @@
+;; Sawfish user customization -- do not edit by hand!
+;; Use the configurator instead.
+;; sawfish version 1.9.1, written Sun Mar 22 03:26:20 2015
+
+(custom-set-typed-variable (quote default-frame-style) (quote AquaOS) (quote frame-style))
+(custom-set-typed-variable (quote focus-mode) (quote enter-exit) (quote symbol))
