@@ -1,0 +1,155 @@
+xterm*altSendsEscape:true
+!xterm*faceName:Inconsolata
+XTerm*utf8: 2
+XTerm*faceName: xft:Inconsolata:size=14
+!xterm*faceSize: 14
+xterm*eightBitInput:false
+xterm.vt100.metaSendsEscape:true
+Uxterm*altSendsEscape:true
+XTerm*locale: zh_CN.UTF-8
+UXTerm*locale: zh_CN.UTF-8
+xterm*faceNameDoublesize: WenQuanYi Micro Hei:pixelsize=14
+XTerm*VT100.cutNewLine: false
+XTerm*VT100.cutToBeginningOfLine: false
+XTerm*VT100.charClass: 33:48,35:48,37:48,42:48,45-47:48,64:48,95:48,126:48
+
+
+!XTerm*renderFont : true
+!XTerm*faceSize : 11
+!XTerm*faceName : Inconsolata
+!! let’s be 8bit-clean
+!XTerm*utf8 : 1
+!XTerm*eightBitInput : false
+!XTerm*eightBitControl : false
+!XTerm*eightBitOutput : true
+!! disable fullscreen on <Alt-Return>
+!XTerm*fullscreen : never
+!XTerm*omitTranslation : fullscreen
+
+
+!UXTerm*faceName: xft:Inconsolata:size=14
+!UXterm*faceSize: 14
+!uxterm*eightBitInput:false
+!uxterm.vt100.metaSendsEscape:true
+!Uxterm*faceName: Bitstream Vera Sans Mono:antialias=True:pixelsize=15
+!xterm*faceNameDoublesize: simsun bitmap song:pixelsize=16
+!| UXTerm >> all VTE-based terminals <<<
+!|=============================================================================
+! preferred fonts: Inconsolata, Monaco, Monospace, Terminal, Terminus, Ubuntu…
+UXTerm*renderFont : true
+UXTerm*faceSize : 11
+! UXTerm*faceName : Inconsolata
+! let’s be 8bit-clean
+UXTerm*utf8 : 1
+UXTerm*eightBitInput : false
+UXTerm*eightBitControl : false
+UXTerm*eightBitOutput : true
+! disable fullscreen on <Alt-Return>
+UXTerm*fullscreen : never
+UXTerm*omitTranslation : fullscreen
+!rxvt.font:-misc-fixed-medium-r-normal-*-18-120-100-c-90-iso10646-1
+!
+!look and feel
+!xterm.termName:xterm-256color
+!xterm.geometry:80x36
+!xterm*local:true
+!xterm.utf8:1
+!xterm*utf8Title:true
+!xterm*xftAntialias:true
+!xterm*cjkWidth:false
+!xterm*RenderFont: true
+!urxvt
+URxvt.multichar_encoding:utf-8
+!URxvt*termName: screen-256color
+URxvt*geometry: 100x35
+URxvt*loginShell: true
+URxvt*scrollColor: #777777
+URxvt*scrollstyle: plain
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: false
+URxvt*secondaryScreen: true
+URxvt*secondaryScroll: true
+!URxvt*skipScroll: true
+URxvt*scrollBar: true
+URxvt*scrollBar_right: true
+URxvt*scrollBar_floating: true
+URxvt*fading: 30
+URxvt*utmpInhibit: false
+URxvt*urgentOnBell: false
+!URxvt*visualBell: true
+URxvt*mapAlert: true
+URxvt*mouseWheelScrollPage: false
+URxvt*background: Black
+!URxvt*foreground: White
+URxvt*foreground: Grey
+URxvt*colorUL: yellow
+URxvt*underlineColor: yellow
+!URxvt*font: -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
+!URxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+!URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
+!URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+!URxvt*font:-*-courier-medium-r-normal-*-18-*-*-*-*-*-iso8859-1
+!URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+!URxvt.font:  xft:Inconsolata:size=14
+!URxvt.font:  xft:Inconsolata:size=9
+!URxvt.font:  xft:Inconsolata:size=14
+!URxvt.font: xft:DejaVu Sans Mono:pixelsize=15
+!URxvt.font: xft:DejaVu Sans Mono:size=14
+!URxvt.font:  xft:Inconsolata-g:style=medium 
+URxvt.font:  xft:Inconsolata-g:size=14
+URxvt*saveLines: 0
+URxvt*buffered: true
+URxvt*hold: false
+URxvt*internalBorder:
+URxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+URxvt*perl-ext-common:
+URxvt*perl-ext:
+
+
+
+
+
+
+
+
+emacs.menuBar :off
+!emacs.toolBar :0:
+emacs.toolBar :off
+!emacs.font:6x13
+!emacs.font: Inconsolata
+emacs.font : inconsolata:style=medium 
+emacs.borderWidth :0
+emacs.background :\#002b00
+emacs.foreground  :\#ffe97a
+rxvt*swapButtons: true
+URxvt*swapButtons: true
+rxvt.background :\#381900
+rxvt.foreground :\#fff4c0
+rxvt.font: Courier New-18
+rxvt.boldFont: Courier New-18
+rxvt.title:rxvt
+emacs.scrollBarWidth :0
+emacs.verticalScrollBars :off
+Emacs.Font: fontset-song
+Emacs.FontsetList: song kai hei lucida
+Emacs.Fontset-0:-adobe-courier-medium-r-*-*-14-*-*-*-*-*-fontset-song,\
+        chinese-gb2312:-*-simsun-medium-r-*--16-*-*-*-*-*-gbk-0,\
+        mule-unicode-0100-24ff:-misc-fixed-medium-r-normal--16-*-*-*-*-*-iso10646-1,\
+        korean-ksc5601:-*-medium-r-normal-*-16-*-ksc5601*-*,
+        chinese-cns11643-5:-*-simsun-medium-r-*--16-*-*-*-*-*-gbk-0,\
+        chinese-cns11643-6:-*-simsun-medium-r-*--16-*-*-*-*-*-gbk-0,\
+        chinese-cns11643-7:-*-simsun-medium-r-*--16-*-*-*-*-*-gbk-0
+
+Emacs.Fontset-1:-adobe-courier-medium-r-*-*-14-*-*-*-*-*-fontset-kai,\
+        chinese-gb2312:-*-simkai-medium-r-*--16-*-*-*-*-*-gbk-0,\
+        mule-unicode-0100-24ff:-misc-fixed-medium-r-normal--16-*-*-*-*-*-iso10646-1
+
+Emacs.Fontset-2:-adobe-courier-medium-r-*-*-14-*-*-*-*-*-fontset-hei,\
+        chinese-gb2312:-*-simhei-medium-r-*--16-*-*-*-*-*-gbk-0,\
+        mule-unicode-0100-24ff:-misc-fixed-medium-r-normal--16-*-*-*-*-*-iso10646-1
+
+Emacs.Fontset-3:-adobe-courier-medium-r-*-*-14-*-*-*-*-*-fontset-lucida,\
+        ascii:-b&h-lucidatypewriter-medium-r-*-*-12-*-*-*-*-*-iso8859-1,\
+        chinese-gb2312:-*-simsun-medium-r-*--16-*-*-*-*-*-gbk-0,\
+        mule-unicode-0100-24ff:-misc-fixed-medium-r-normal--16-*-*-*-*-*-iso10646-1
